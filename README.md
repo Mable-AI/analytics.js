@@ -4,7 +4,7 @@ Analytics library to send events to the mable server without having to deal with
 
 ## Usage
 
-    const Analytics = require('@mable-ai/analytics')
+    const Analytics = require('@mableai/analytics')
 
     const analytics = new Analytics(apiKey);
 
