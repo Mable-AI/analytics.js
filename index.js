@@ -6,7 +6,8 @@ const axiosRetry = require('axios-retry');
 const version = require('./package.json').version;
 
 const setImmediate = global.setImmediate || process.nextTick.bind(process);
-const noop = () => {};
+const noop = () => {
+};
 
 class Analytics {
 
@@ -102,41 +103,41 @@ class Analytics {
         }
 
         const items = this.queue.splice(0, 20);
-        const callbacks = items.map(item => item.callback)
-        const messages = items.map(item => item.message)
+        const callbacks = items.map(item => item.callback);
+        const messages = items.map(item => item.message);
 
         const batchData = {
             data: messages,
             timestamp: new Date(),
-            sentAt: new Date(),
-        }
+            sentAt: new Date()
+        };
 
         const finish = err => {
             callbacks.forEach(cb => cb(err));
             cb(err, batchData);
-        }
+        };
 
         const req = {
             headers: {
-                "X-Mable-APIKey": this.apiKey
+                'X-Mable-APIKey': this.apiKey
             }
-        }
+        };
 
         return this.axiosInstance.post(this.host, batchData, req)
             .then(() => {
-                finish()
-                return Promise.resolve(batchData)
+                finish();
+                return Promise.resolve(batchData);
             })
             .catch(err => {
                 if (err.response) {
-                    const error = new Error(err.response.statusText)
-                    finish(error)
-                    throw error
+                    const error = new Error(err.response.statusText);
+                    finish(error);
+                    throw error;
                 }
 
-                finish(err)
-                throw err
-            })
+                finish(err);
+                throw err;
+            });
     }
 
     checkIfErrorIsRetryable(error) {
