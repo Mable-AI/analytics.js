@@ -15,6 +15,9 @@
     "ai",
     "mable"
   ],
+  "release": {
+    "branches": ["main"]
+  },
   "author": "Marvin Wichmann <me@marvin-wichmann.de>",
   "license": "MIT",
   "bugs": {
