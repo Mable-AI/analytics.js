@@ -1,1 +1,2 @@
-# analytics.js
+# Mable AI Analytics JS
+

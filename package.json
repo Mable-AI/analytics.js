@@ -1,0 +1,24 @@
+{
+  "name": "@mableai/analytics",
+  "version": "0.0.1",
+  "description": "Analytics JS integration for Mable AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mable-AI/analytics.js.git"
+  },
+  "keywords": [
+    "analytics",
+    "ai",
+    "mable"
+  ],
+  "author": "Marvin Wichmann <me@marvin-wichmann.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mable-AI/analytics.js/issues"
+  },
+  "homepage": "https://github.com/Mable-AI/analytics.js#readme"
+}
