@@ -1,6 +1,6 @@
 {
   "name": "@mableai/analytics",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Analytics JS integration for Mable AI",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,19 @@
   "bugs": {
     "url": "https://github.com/Mable-AI/analytics.js/issues"
   },
-  "homepage": "https://github.com/Mable-AI/analytics.js#readme"
+  "homepage": "https://github.com/Mable-AI/analytics.js#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "axios-retry": "3.2.0",
+    "md5": "^2.2.1",
+    "ms": "^2.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^9.0.0",
+    "@semantic-release/error": "^3.0.0",
+    "@semantic-release/github": "^8.0.0",
+    "@semantic-release/npm": "^8.0.0",
+    "@semantic-release/release-notes-generator": "^10.0.0"
+  }
 }
