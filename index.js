@@ -104,7 +104,7 @@ class Analytics {
 
         const items = this.queue.splice(0, 20);
         const callbacks = items.map(item => item.cb);
-        const messages = items.map(item => item.message);
+        const messages = items.map(item => item.event);
 
         const batchData = {
             data: messages,
