@@ -15,3 +15,4 @@ Analytics library to send events to the mable server without having to deal with
 
 * Give this README more love
 * Add proper tests for the code and run them in CI
+* Add GH Action for automated tests
