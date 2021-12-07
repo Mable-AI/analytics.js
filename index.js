@@ -3,6 +3,7 @@
 const axios = require('axios');
 const assert = require('assert');
 const axiosRetry = require('axios-retry');
+const uuid = require('uuid');
 const version = require('./package.json').version;
 
 const setImmediate = global.setImmediate || process.nextTick.bind(process);
