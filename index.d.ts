@@ -15,3 +15,5 @@ export declare class Analytics {
      */
     identify(event: {}, cb: any): void;
 }
+
+export default Analytics;
