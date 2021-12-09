@@ -15,11 +15,14 @@
     "ai",
     "mable"
   ],
+  "types": "./index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "author": "Marvin Wichmann <me@marvin-wichmann.de>",
   "license": "MIT",
@@ -32,6 +35,8 @@
     "axios-retry": "3.2.0",
     "md5": "^2.2.1",
     "ms": "^2.0.0",
+    "tsc": "^2.0.3",
+    "typescript": "^4.5.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
