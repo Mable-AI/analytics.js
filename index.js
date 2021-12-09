@@ -48,6 +48,17 @@ class Analytics {
     }
 
     /**
+     * Identify event for a given user.
+     *
+     * @param event The identify data
+     * @param cb Callback
+     */
+    identify(event = {}, cb) {
+        this.addToQueue('identify', event, cb);
+        return this;
+    }
+
+    /**
      * Add event and callback to internal queue.
      *
      * @param type
