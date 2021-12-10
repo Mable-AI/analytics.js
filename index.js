@@ -59,6 +59,17 @@ class Analytics {
     }
 
     /**
+     * Track page view events.
+     *
+     * @param event The page_view data.
+     * @param cb Callback
+     */
+    pageview(event = {}, cb) {
+        this.addToQueue('page_view', event, cb);
+        return this;
+    }
+
+    /**
      * Add event and callback to internal queue.
      *
      * @param type

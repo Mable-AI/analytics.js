@@ -14,6 +14,13 @@ export declare class Analytics {
      * @param cb Callback
      */
     identify(event: {}, cb: any): void;
+    /**
+     * Track page view events.
+     *
+     * @param event The identify data
+     * @param cb Callback
+     */
+    pageview(event: {}, cb: any): void;
 }
 
 export default Analytics;
