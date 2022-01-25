@@ -19,7 +19,7 @@ class Analytics {
      * @param env
      * @param host
      */
-    constructor(apiKey, env = 'development', host = null) {
+    constructor(apiKey, env = 'production', host = null) {
         assert(apiKey, 'Please provide a valid API key.');
 
         this.defaultHost = (env == 'production')
