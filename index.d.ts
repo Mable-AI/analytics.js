@@ -1,5 +1,5 @@
 export declare class Analytics {
-    constructor(apiKey: any, host?: string);
+    constructor(apiKey: any, env?: string, host?: string);
     /**
      * Track an event for a given user.
      *
