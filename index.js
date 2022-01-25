@@ -16,13 +16,18 @@ class Analytics {
      * Creates the analytics object. ApiKey needs to be set by the user.
      *
      * @param apiKey
+     * @param env
      * @param host
      */
-    constructor(apiKey, host = 'https://api.mable.de/dev/v1/batch') {
+    constructor(apiKey, env = 'production', host = null) {
         assert(apiKey, 'Please provide a valid API key.');
 
+        this.defaultHost = (env == 'production')
+            ? 'https://api.mable.de/v1/batch'
+            : 'https://api.mable.de/dev/v1/batch';
+
         this.apiKey = apiKey;
-        this.host = host;
+        this.host = host || this.defaultHost;
         this.queue = [];
         this.flushAfter = 10000; // defaults to 10 seconds
         this.flushed = false;
