@@ -157,6 +157,7 @@ class Analytics {
                 return Promise.resolve(batchData);
             })
             .catch(err => {
+                console.log('Error in sending events', err);
                 if (err.response) {
                     const error = new Error(err.response.statusText);
                     finish(error);
