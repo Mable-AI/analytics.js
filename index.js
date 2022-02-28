@@ -95,6 +95,7 @@ class Analytics {
         event.eventType = type;
         event.apiKey = this.apiKey;
         event.id = event.id || uuid();
+        event.sessionId = event.sessionId || uuid();
 
         this.queue.push({event, cb});
 
