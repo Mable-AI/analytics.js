@@ -94,8 +94,8 @@ class Analytics {
         }, event.context);
         event.eventType = type;
         event.apiKey = this.apiKey;
-        event.id = event.id || uuid();
-        event.sessionId = event.sessionId || uuid();
+        event.id = event.id || uuid.v4();
+        event.sessionId = event.sessionId || uuid.v4();
 
         this.queue.push({event, cb});
 
