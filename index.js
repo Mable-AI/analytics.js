@@ -4,7 +4,7 @@ const axios = require('axios');
 const assert = require('assert');
 const axiosRetry = require('axios-retry');
 const uuid = require('uuid');
-var Validator = require('jsonschema').Validator;
+const Validator = require('jsonschema').Validator;
 const version = require('./package.json').version;
 
 const eventSchema = require('./schemas/event.schema.json');
@@ -103,7 +103,6 @@ class Analytics {
         event.userId = event.userId || '';
         event.anonymousId = event.anonymousId || '';
         event.sessionId = event.sessionId || uuid.v4();
-        event.meta = event.meta || {};
         event.shopping_data = event.shopping_data || {
             currency: 'EUR',
             total_price: 0.00,
