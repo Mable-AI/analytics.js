@@ -4,8 +4,13 @@ const axios = require('axios');
 const assert = require('assert');
 const axiosRetry = require('axios-retry');
 const uuid = require('uuid');
+var Validator = require('jsonschema').Validator;
 const version = require('./package.json').version;
 
+const eventSchema = require('./schemas/event.schema.json');
+const { validate } = require('jsonschema');
+
+var v = new Validator();
 const setImmediate = global.setImmediate || process.nextTick.bind(process);
 const noop = () => {
 };
@@ -95,7 +100,17 @@ class Analytics {
         event.eventType = type;
         event.apiKey = this.apiKey;
         event.id = event.id || uuid.v4();
+        event.userId = event.userId || '';
+        event.anonymousId = event.anonymousId || '';
         event.sessionId = event.sessionId || uuid.v4();
+        event.meta = event.meta || {};
+        event.shopping_data = event.shopping_data || {
+            currency: 'EUR',
+            total_price: 0.00,
+        };
+        event.customerData = event.customerData || {};
+
+        this.validateEvent(event, cb);
 
         this.queue.push({event, cb});
 
@@ -112,6 +127,22 @@ class Analytics {
 
         if (!this.intervalTimer) {
             this.intervalTimer = setTimeout(this.flush.bind(this, cb), this.flushAfter);
+        }
+    }
+
+    /**
+     * Validate the event instance.
+     * 
+     * @param event
+     * @param cb
+     * @returns {void}
+    **/
+    validateEvent(event, cb) {
+        try {
+            v.validate(event, eventSchema, {throwFirst: true});
+        } catch (err) {
+            cb(err.errors);
+            throw err;
         }
     }
 
