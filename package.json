@@ -33,6 +33,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "axios-retry": "3.2.0",
+    "jsonschema": "^1.4.0",
     "md5": "^2.2.1",
     "ms": "^2.0.0",
     "tsc": "^2.0.3",
