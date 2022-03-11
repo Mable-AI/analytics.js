@@ -103,11 +103,8 @@ class Analytics {
         event.userId = event.userId || '';
         event.anonymousId = event.anonymousId || '';
         event.sessionId = event.sessionId || uuid.v4();
-        event.shopping_data = event.shopping_data || {
-            currency: 'EUR',
-            total_price: 0.00,
-        };
-        event.customerData = event.customerData || {};
+        event.shopping_data = Object.keys(event?.shopping_data  || {}).length ? event.shopping_data : null; if (!event.shopping_data) delete event.shopping_data;
+        event.customerData = Object.keys(event.customerData || {}).length ? event.customerData : null; if (!event.customerData) delete event.customerData;
 
         this.validateEvent(event, cb);
 

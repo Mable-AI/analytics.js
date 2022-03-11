@@ -63,8 +63,7 @@
         "utm_source": {
           "type": "string"
         }
-      },
-      "required": []
+      }
     },
     "clid": {
       "type": "object",
@@ -93,8 +92,7 @@
           },
           "required": ["campaign", "adset", "ad", "timestamp"]
         }
-      },
-      "required": []
+      }
     },
     "cookies": {
       "type": "object",
@@ -117,8 +115,7 @@
         "_clck": {
           "type": "string"
         }
-      },
-      "required": []
+      }
     },
     "context": {
       "type": "object",
@@ -141,8 +138,7 @@
             "search": {
               "type": "string"
             }
-          },
-          "required": []
+          }
         },
         "library": {
           "type": "object",
@@ -153,8 +149,7 @@
           },
           "required": ["wrapperName"]
         }
-      },
-      "required": []
+      }
     },
     "location": {
       "type": "object",
@@ -174,8 +169,7 @@
         "zipCode": {
           "type": "string"
         }
-      },
-      "required": []
+      }
     },
     "customerData": {
       "type": "object",
@@ -198,8 +192,7 @@
         "gender": {
           "type": "string"
         }
-      },
-      "required": []
+      }
     },
     "shopping_data": {
       "type": "object",
@@ -251,8 +244,7 @@
             }
           ]
         }
-      },
-      "required": ["currency", "total_price"]
+      }
     },
     "customData": {
       "type": "object"
