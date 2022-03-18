@@ -40,13 +40,13 @@
       "type": "object"
     },
     "timestamp": {
-      "type": "integer"
+      "type": "number"
     },
     "anonymousId": {
       "type": "string"
     },
     "originalTimestamp": {
-      "type": "integer"
+      "type": "number"
     },
     "utm": {
       "type": "object",
@@ -87,7 +87,7 @@
               "type": "string"
             },
             "timestamp": {
-              "type": "integer"
+              "type": "number"
             }
           },
           "required": ["campaign", "adset", "ad", "timestamp"]
