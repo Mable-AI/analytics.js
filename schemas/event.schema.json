@@ -34,34 +34,34 @@
       "type": "string"
     },
     "fingerprintJsId": {
-      "type": "string"
+      "type": ["string", "number", "null"]
     },
     "fingerprintJsData": {
-      "type": "object"
+      "type": ["object", "null"]
     },
     "timestamp": {
-      "type": "number"
+      "type": ["string", "number", "null"]
     },
     "anonymousId": {
       "type": "string"
     },
     "originalTimestamp": {
-      "type": "number"
+      "type": ["string", "number", "null"]
     },
     "utm": {
       "type": "object",
       "properties": {
         "utm_campaign": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "utm_content": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "utm_medium": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "utm_source": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         }
       }
     },
@@ -69,25 +69,25 @@
       "type": "object",
       "properties": {
         "fbclid": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "gclid": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "mclid": {
           "type": "object",
           "properties": {
             "campaign": {
-              "type": "string"
+              "type": ["string", "number", "null"]
             },
             "adset": {
-              "type": "string"
+              "type": ["string", "number", "null"]
             },
             "ad": {
-              "type": "string"
+              "type": ["string", "number", "null"]
             },
             "timestamp": {
-              "type": "number"
+              "type": ["string", "number", "null"]
             }
           },
           "required": ["campaign", "adset", "ad", "timestamp"]
@@ -98,22 +98,22 @@
       "type": "object",
       "properties": {
         "_fbp": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "_fbc": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "_ga": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "_gid": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "_gcl_au": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         },
         "_clck": {
-          "type": "string"
+          "type": ["string", "number", "null"]
         }
       }
     },
