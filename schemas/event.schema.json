@@ -141,7 +141,7 @@
           }
         },
         "library": {
-          "type": "object",
+          "type": ["object", "null"],
           "properties": {
             "wrapperName": {
               "type": "string"
