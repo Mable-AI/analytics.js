@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "eventType": {
+        "type": "string"
+      },
+      "event": {
+        "type": "string"
+      },
+      "clientId": {
+        "type": "string"
+      },
+      "timestamp": {
+        "type": "integer"
+      },
+      "traits": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string"
+          },
+          "anonymousId": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": ["string", "null"]
+          },
+          "email": {
+            "type": ["string", "null"]
+          },
+          "shopifyCustomerId": {
+            "type": ["string", "null"]
+          },
+          "fingerprintJsId": {
+            "type": ["string", "null"]
+          },
+          "fbclid": {
+            "type": ["string", "null"]
+          }
+        },
+        "required": [
+          "sessionId",
+          "anonymousId"
+        ]
+      }
+    },
+    "required": [
+      "eventType",
+      "clientId",
+      "timestamp",
+      "traits"
+    ]
+  }
