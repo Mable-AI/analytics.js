@@ -1,0 +1,15 @@
+{
+    "eventType": "identify",
+    "event": "Identify",
+    "clientId": "example-shop.myshopify.com",
+    "timestamp": 123456789,
+    "traits": {
+        "sessionId": "c0a8f092-e5e9-48ed-8c6b-423978e7a9a0",
+        "anonymousId": "c0a8f092-e5e9-48ed-8c6b-423978e7a9a0",
+        "phoneNumber": "555-555-5555",
+        "email": "me@example.com",
+        "shopifyCustomerId": "123456789",
+        "fingerprintJsId": "c0a8f092-e5e9-48ed-8c6b-423978e7a9a0",
+        "fbclid": "c0a8f092-e5e9-48ed-8c6b-423978e7a9a0"
+    }
+}

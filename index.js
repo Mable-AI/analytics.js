@@ -8,7 +8,7 @@ const Validator = require('jsonschema').Validator;
 const version = require('./package.json').version;
 
 const eventSchema = require('./schemas/event.schema.json');
-const { validate } = require('jsonschema');
+const identifySchema = require('./schemas/identify.schema.json');
 
 var v = new Validator();
 const setImmediate = global.setImmediate || process.nextTick.bind(process);
@@ -100,13 +100,20 @@ class Analytics {
         event.eventType = type;
         event.apiKey = this.apiKey;
         event.id = event.id || uuid.v4();
-        event.userId = event.userId || '';
-        event.anonymousId = event.anonymousId || '';
-        event.sessionId = event.sessionId || uuid.v4();
-        event.shopping_data = Object.keys(event?.shopping_data  || {}).length ? event.shopping_data : null; if (!event.shopping_data) delete event.shopping_data;
-        event.customerData = Object.keys(event.customerData || {}).length ? event.customerData : null; if (!event.customerData) delete event.customerData;
 
-        this.validateEvent(event, cb);
+        if (type === 'identify') {
+            this.validateIdentify(event, cb);
+        }
+
+        if (type === 'track' || type === 'page_view') {            
+            event.userId = event.userId || '';
+            event.anonymousId = event.anonymousId || '';
+            event.sessionId = event.sessionId || uuid.v4();
+            event.shopping_data = Object.keys(event?.shopping_data  || {}).length ? event.shopping_data : null; if (!event.shopping_data) delete event.shopping_data;
+            event.customerData = Object.keys(event.customerData || {}).length ? event.customerData : null; if (!event.customerData) delete event.customerData;
+    
+            this.validateEvent(event, cb);
+        }
 
         this.queue.push({event, cb});
 
@@ -136,6 +143,22 @@ class Analytics {
     validateEvent(event, cb) {
         try {
             v.validate(event, eventSchema, {throwFirst: true});
+        } catch (err) {
+            cb(err.errors);
+            throw err;
+        }
+    }
+
+    /**
+     * Validate the identify instance.
+     * 
+     * @param identifyEvent
+     * @param cb
+     * @returns {void}
+    **/
+     validateIdentify(identifyEvent, cb) {
+        try {
+            v.validate(identifyEvent, identifySchema, {throwFirst: true});
         } catch (err) {
             cb(err.errors);
             throw err;
