@@ -106,7 +106,6 @@ class Analytics {
         }
 
         if (type === 'track' || type === 'page_view') {            
-            event.userId = event.userId || '';
             event.anonymousId = event.anonymousId || '';
             event.sessionId = event.sessionId || uuid.v4();
             event.shopping_data = Object.keys(event?.shopping_data  || {}).length ? event.shopping_data : null; if (!event.shopping_data) delete event.shopping_data;

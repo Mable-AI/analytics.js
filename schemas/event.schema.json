@@ -27,9 +27,6 @@
     "sentAt": {
       "type": "string"
     },
-    "userId": {
-      "type": "string"
-    },
     "sessionId": {
       "type": "string"
     },
