@@ -14,6 +14,9 @@
       "timestamp": {
         "type": "integer"
       },
+      "originalTimestamp": {
+        "type": "integer"
+      },
       "sentAt": {
         "type": "string"
       },
@@ -39,6 +42,9 @@
             "type": ["string", "null"]
           },
           "fbclid": {
+            "type": ["string", "null"]
+          },
+          "gclid": {
             "type": ["string", "null"]
           }
         },
