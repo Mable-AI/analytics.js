@@ -28,8 +28,8 @@ class Analytics {
         assert(apiKey, 'Please provide a valid API key.');
 
         this.defaultHost = (env == 'production')
-            ? 'https://api.mable.de/v1/batch'
-            : 'https://api.mable.de/dev/v1/batch';
+            ? 'https://api.mable.ai/v1/batch'
+            : 'https://api.mable.ai/dev/v1/batch';
 
         this.apiKey = apiKey;
         this.host = host || this.defaultHost;
