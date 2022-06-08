@@ -3,5 +3,5 @@ updates:
   - package-ecosystem: "npm"
     directory: "/" # Location of package manifests
     schedule:
-      interval: "hourly"
+      interval: "daily"
       
